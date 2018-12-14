@@ -94,7 +94,7 @@ class App extends Component {
         return dataHashInstance.ownerOf(this.state.web3.fromAscii(dataHash), {
           from: accounts[0],
           gas: 3000000
-        });
+        }).then((res) => this.state.web3.toAscii(res));
       });
     });
   }
